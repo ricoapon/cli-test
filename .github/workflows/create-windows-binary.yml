@@ -23,6 +23,9 @@ jobs:
         run: |
           gradlew.bat build -Dquarkus.package.type=native -x test --no-daemon
 
-      - name: Check output files
-        run: |
-          find build
+      - name: Archive binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-exe
+          path: |
+            build/*.exe
