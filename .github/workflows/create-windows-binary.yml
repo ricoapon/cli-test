@@ -21,8 +21,7 @@ jobs:
 
       - name: Build Project
         run: |
-          chmod a+x ./gradlew
-          ./gradlew build -Dquarkus.package.type=native -x test --no-daemon
+          gradlew.bat build -Dquarkus.package.type=native -x test --no-daemon
 
       - name: Check output files
         run: |
